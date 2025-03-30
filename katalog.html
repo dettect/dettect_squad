@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог</title>
+  <link rel="stylesheet" href="css/style3.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo">
+            <a href="index.html">dettect</a>
+          </div>
+          <ul class="menu">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="#">Авторизация</a></li>
+            <li><a href="katalog.html">Каталог</a></li>
+            <li><a href="onas.html">О нас</a></li>
+            <li><a href="#">Корзина</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <section class="catalog">
+    <h1>Наши товары</h1>
+    <div class="catalog-container">
+      <div class="product-card" onclick="openProductDetails(1)">
+        <img src="img/dettect baby.png" alt="Товар 1">
+        <h3>Наклейка</h3>
+        <p class="price">Цена: 349 руб.</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+
+      <div class="product-card" onclick="openProductDetails(2)">
+        <img src="img/dettect escape.png" alt="Товар 2">
+        <h3>Наклейка</h3>
+        <p class="price">Цена: 499 руб.</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dettect classic.png" alt="Товар 3">
+        <h3>Наклейка</h3>
+        <p class="price">Цена: 449 руб.</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dettect graffiti.png" alt="Товар 4">
+        <h3>Наклейка</h3>
+        <p class="price">Цена: 399 руб.</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+      
+      <div class="product-card">
+        <img src="img/dettect stars.png" alt="Товар 5">
+        <h3>Наклейка</h3>
+        <p class="price">Цена: 299 руб.</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+      
+      <div class="product-card">
+        <img src="img/dettect metal.png" alt="Товар 6">
+        <h3>Наклейка</h3>
+        <p class="price">Цена: 999 руб.</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dettect heart.png" alt="Товар 7">
+        <h3>Наклейка</h3>
+        <p class="price">Цена: 799 руб.</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dettect vodorosli.png" alt="Товар 8">
+        <h3>Наклейка</h3>
+        <p class="price">Цена: 899 руб.</p>
+        <button class="add-to-cart">Добавить в корзину</button>
+      </div>
+    </div>
+  </section>
+  
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeProductDetails()">&times;</span>
+      <h2 id="productTitle">Название товара</h2>
+      <p id="productDescription">Описание товара</p>
+      <p><strong>Цена:</strong> <span id="productPrice">0</span></p>
+      <img id="productImage" src="" alt="Изображение товара" />
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+  <footer>
+    <p>&copy; 2025 dettect. Все права защищены.</p>
+  </footer>
+</body>
+</html>
