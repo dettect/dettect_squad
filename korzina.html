@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация | dettect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .auth-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+
+        .auth-tab.active {
+            background: #8e5aff;
+            color: white;
+            border-color: #6b3aff;
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .auth-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #8e5aff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .auth-form button:hover {
+            background-color: #6b3aff;
+        }
+
+        .auth-message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .auth-container {
+    flex: 1;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">dettect</a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#" class="active">Авторизация</a></li>
+                <li><a href="katalog.html">Каталог</a></li>
+                <li><a href="onas.html">О нас</a></li>
+                <li><a href="korzina.html">Корзина</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-tabs">
+            <div class="auth-tab active" onclick="switchTab('login')">Вход</div>
+            <div class="auth-tab" onclick="switchTab('register')">Регистрация</div>
+        </div>
+
+        <div id="login-form" class="auth-form active">
+            <form id="loginForm">
+                <input type="text" id="login-username" placeholder="Логин" required>
+                <input type="password" id="login-password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+            <div id="login-message" class="auth-message" style="display: none;"></div>
+        </div>
+
+        <div id="register-form" class="auth-form">
+            <form id="registerForm">
+                <input type="text" id="register-username" placeholder="Логин" required>
+                <input type="password" id="register-password" placeholder="Пароль" required>
+                <input type="password" id="register-confirm" placeholder="Повторите пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <div id="register-message" class="auth-message" style="display: none;"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 dettect. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function switchTab(tabName) {
+            // Переключение вкладок
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.auth-form').forEach(form => {
+                form.classList.remove('active');
+            });
+
+            if (tabName === 'login') {
+                document.querySelector('.auth-tab:nth-child(1)').classList.add('active');
+                document.getElementById('login-form').classList.add('active');
+            } else {
+                document.querySelector('.auth-tab:nth-child(2)').classList.add('active');
+                document.getElementById('register-form').classList.add('active');
+            }
+        }
+
+        // Обработка формы входа
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            const message = document.getElementById('login-message');
+
+            // Проверка данных (логин: 1, пароль: 1)
+            if (username === '1' && password === '1') {
+                message.textContent = 'Успешный вход! Перенаправление...';
+                message.className = 'auth-message success';
+                message.style.display = 'block';
+                
+                // Перенаправление через 1 секунду
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            } else {
+                message.textContent = 'Неверный логин или пароль';
+                message.className = 'auth-message error';
+                message.style.display = 'block';
+            }
+        });
+
+        // Обработка формы регистрации
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('register-username').value;
+            const password = document.getElementById('register-password').value;
+            const confirm = document.getElementById('register-confirm').value;
+            const message = document.getElementById('register-message');
+
+            if (password !== confirm) {
+                message.textContent = 'Пароли не совпадают';
+                message.className = 'auth-message error';
+                message.style.display = 'block';
+                return;
+            }
+
+            if (password.length < 4) {
+                message.textContent = 'Пароль должен содержать минимум 4 символа';
+                message.className = 'auth-message error';
+                message.style.display = 'block';
+                return;
+            }
+
+            // Здесь можно добавить AJAX-запрос для реальной регистрации
+            message.textContent = 'Регистрация успешна! Теперь вы можете войти.';
+            message.className = 'auth-message success';
+            message.style.display = 'block';
+            
+            // Очистка формы
+            document.getElementById('registerForm').reset();
+            
+            // Переключение на вкладку входа через 2 секунды
+            setTimeout(() => {
+                switchTab('login');
+                message.style.display = 'none';
+            }, 2000);
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
