@@ -77,7 +77,7 @@ nav .menu li a:hover {
     padding: 100px 20px;
      border-radius: 15px; /* Уровень скругления */
     overflow: hidden;     /* Обрезает содержимое по скругленным краям */
-             /* Отступ от краев экрана */
+            
 }
 
 .hero h1 {
