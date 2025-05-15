@@ -131,3 +131,65 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// Функция открытия карточки товара
+function openProductDetails(element) {
+    const modal = document.getElementById('productModal');
+    const title = element.querySelector('h3').textContent;
+    const price = element.querySelector('.price').textContent;
+    const imgSrc = element.querySelector('img').src;
+    const details = element.querySelector('.product-details').innerHTML;
+
+    document.getElementById('productTitle').textContent = title;
+    document.getElementById('productPrice').textContent = price;
+    document.getElementById('productImage').src = imgSrc;
+    document.getElementById('productDescription').innerHTML = details;
+    
+    modal.style.display = "block";
+}
+
+// Функция закрытия модального окна
+function closeProductDetails() {
+    document.getElementById('productModal').style.display = "none";
+}
+
+// Закрытие при клике вне модального окна
+window.onclick = function(event) {
+    const modal = document.getElementById('productModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Гамбургер-меню
+document.querySelector('.hamburger').addEventListener('click', function() {
+  document.querySelector('.menu').classList.toggle('active');
+});
+
+// Закрытие меню при клике вне его
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.hamburger') && !e.target.closest('.menu')) {
+    document.querySelector('.menu').classList.remove('active');
+  }
+});
+
+// Открытие/закрытие меню
+document.querySelector('.hamburger').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.menu').classList.toggle('active');
+});
+
+// Закрытие меню при клике вне его
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.hamburger') && !e.target.closest('.menu')) {
+        document.querySelector('.hamburger').classList.remove('active');
+        document.querySelector('.menu').classList.remove('active');
+    }
+});
+
+// Закрытие при выборе пункта меню
+document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.hamburger').classList.remove('active');
+        document.querySelector('.menu').classList.remove('active');
+    });
+});

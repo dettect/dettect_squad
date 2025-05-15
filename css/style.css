@@ -4,10 +4,16 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
+    background: 
+        linear-gradient(rgba(168, 168, 168, 0.9), rgba(146, 146, 146, 0.7)), /* Затемнение */
+        url('../img/background.png') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    
 }
 
 h1, h2, h3 {
-    color:#333333;
+    color:#000000;
 }
 
 a {
@@ -20,6 +26,14 @@ ul {
     padding: 0;
     margin: 0;
 }
+
+.hero, 
+      .services, 
+      .catalog {
+        background: transparent;
+        position: relative;
+        z-index: 1;
+      }
 
 /* Стили для Header */
 header {
@@ -61,6 +75,9 @@ nav .menu li a:hover {
     color: white;
     text-align: center;
     padding: 100px 20px;
+     border-radius: 15px; /* Уровень скругления */
+    overflow: hidden;     /* Обрезает содержимое по скругленным краям */
+             /* Отступ от краев экрана */
 }
 
 .hero h1 {
@@ -69,31 +86,37 @@ nav .menu li a:hover {
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 24px;
     margin: 20px 0;
 }
 
-.cta-button {
-    background-color: #8e5aff;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.hero-button-wrapper {
+    margin-top: 30px; /* Отступ от текста */
+    padding-bottom: 50px; /* Отступ снизу секции */
+    text-align: center;
 }
 
 .cta-button:hover {
     background-color: #6b3aff;
 }
 
+/* Стили для обертки кнопки */
+.catalog-button-wrapper {
+    margin-top: 15px; /* Отступ сверху */
+    text-align: center; /* Выравнивание по центру */
+    width: 100%; /* Занимает всю ширину */
+}
+
+/* Обновленные стили кнопки */
 .cta-button2 {
-    justify-content: center;
-    text-align: center;
+    display: inline-block; 
     background-color: #8e5aff;
-    margin: 20px;
     padding: 15px 30px;
     font-size: 18px;
     border-radius: 5px;
     transition: background-color 0.3s;
+    text-decoration: none; 
+    color: white;
 }
 
 .cta-button2:hover {
@@ -105,6 +128,9 @@ nav .menu li a:hover {
     text-align: center;
     padding: 50px 20px;
     background-color: #fff;
+    background: transparent;
+        position: relative;
+        z-index: 1;
 }
 
 .services h2 {
@@ -127,7 +153,7 @@ nav .menu li a:hover {
 }
 
 .service-card h3 {
-    font-size: 24px;
+    font-size: 26px;
     margin-bottom: 15px;
 }
 
@@ -210,10 +236,14 @@ nav .menu li a:hover {
     margin: 40px auto;
     padding: 0 20px;
     text-align: center;
+    background: transparent;
+        position: relative;
+        z-index: 1;
 }
 
 .catalog h1 {
     margin-bottom: 30px;
+    font-size: 36px;
 }
 
 .catalog-container {
@@ -302,4 +332,130 @@ footer {
     margin-top: 40px;
 }
 
+@media (max-width: 768px) {
+  /* Адаптация навигации */
+  nav .menu {
+    flex-direction: column;
+    gap: 10px;
+    display: none; /* Скрываем меню по умолчанию */
+  }
 
+  .menu.active {
+    display: flex; /* Показываем при активации */
+  }
+
+  /* Гамбургер-меню */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  /* Адаптация заголовков */
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .service-cards, .catalog-container {
+    flex-direction: column;
+  }
+
+  .service-card, .product-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+.hamburger {
+    display: none; /* Скрыто на десктопе */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.hamburger-inner::before {
+    top: -8px;
+}
+
+.hamburger-inner::after {
+    bottom: -8px;
+}
+
+/* Анимация при открытии */
+.hamburger.active .hamburger-inner {
+    background: transparent;
+}
+
+.hamburger.active .hamburger-inner::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; 
+    }
+
+    .menu {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: #333;
+        flex-direction: column;
+        padding: 20px 0;
+        transition: right 0.3s;
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .menu li {
+        margin: 15px 0;
+        text-align: center;
+    }
+}
