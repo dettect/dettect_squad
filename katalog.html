@@ -12,6 +12,11 @@
           <div class="logo">
             <a href="index.html">dettect</a>
           </div>
+           <button class="hamburger" aria-label="Меню">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
           <ul class="menu">
             <li><a href="index.html">Главная</a></li>
             <li><a href="korzina.html">Авторизация</a></li>
@@ -25,62 +30,194 @@
   <section class="catalog">
     <h1>Наши товары</h1>
     <div class="catalog-container">
-      <div class="product-card" onclick="openProductDetails(1)">
+      <div class="product-card" onclick="openProductDetails(this)">
         <img src="img/dettect baby.png" alt="Товар 1">
-        <h3>Наклейка</h3>
+        <h3>Наклейка "Baby"</h3>
         <p class="price">Цена: 349 руб.</p>
+        <div class="product-details" style="display: none;">
+            <p>Размер: 35x6 см</p>
+            <p>Материал: Виниловая/галографическая пленка</p>
+            <p>Устойчива к воде и ультрафиолету</p>
+        </div>
         <button class="add-to-cart">Добавить в корзину</button>
-      </div>
-
-      <div class="product-card" onclick="openProductDetails(2)">
-        <img src="img/dettect escape.png" alt="Товар 2">
-        <h3>Наклейка</h3>
-        <p class="price">Цена: 499 руб.</p>
-        <button class="add-to-cart">Добавить в корзину</button>
-      </div>
-
-      <div class="product-card">
-        <img src="img/dettect classic.png" alt="Товар 3">
-        <h3>Наклейка</h3>
-        <p class="price">Цена: 449 руб.</p>
-        <button class="add-to-cart">Добавить в корзину</button>
-      </div>
-
-      <div class="product-card">
-        <img src="img/dettect graffiti.png" alt="Товар 4">
-        <h3>Наклейка</h3>
-        <p class="price">Цена: 399 руб.</p>
-        <button class="add-to-cart">Добавить в корзину</button>
-      </div>
-      
-      <div class="product-card">
-        <img src="img/dettect stars.png" alt="Товар 5">
-        <h3>Наклейка</h3>
-        <p class="price">Цена: 299 руб.</p>
-        <button class="add-to-cart">Добавить в корзину</button>
-      </div>
-      
-      <div class="product-card">
-        <img src="img/dettect metal.png" alt="Товар 6">
-        <h3>Наклейка</h3>
-        <p class="price">Цена: 999 руб.</p>
-        <button class="add-to-cart">Добавить в корзину</button>
-      </div>
-
-      <div class="product-card">
-        <img src="img/dettect heart.png" alt="Товар 7">
-        <h3>Наклейка</h3>
-        <p class="price">Цена: 799 руб.</p>
-        <button class="add-to-cart">Добавить в корзину</button>
-      </div>
-
-      <div class="product-card">
-        <img src="img/dettect vodorosli.png" alt="Товар 8">
-        <h3>Наклейка</h3>
-        <p class="price">Цена: 899 руб.</p>
-        <button class="add-to-cart">Добавить в корзину</button>
-      </div>
     </div>
+
+    <div class="product-card" onclick="openProductDetails(this)">
+      <img src="img/dettect escape.png" alt="Товар 2">
+      <h3>Наклейка "Escape"</h3>
+      <p class="price">Цена: 499 руб.</p>
+      <div class="product-details" style="display: none;">
+          <p>Размер: 50x23 см</p>
+          <p>Материал: Виниловая/галографическая пленка</p>
+          <p>Устойчива к воде и ультрафиолету</p>
+      </div>
+      <button class="add-to-cart">Добавить в корзину</button>
+  </div>
+
+  <div class="product-card" onclick="openProductDetails(this)">
+    <img src="img/dettect classic.png" alt="Товар 3">
+    <h3>Наклейка "Classic"</h3>
+    <p class="price">Цена: 449 руб.</p>
+    <div class="product-details" style="display: none;">
+        <p>Размер: 40x22 см</p>
+        <p>Материал: Виниловая/галографическая пленка</p>
+        <p>Устойчива к воде и ультрафиолету</p>
+    </div>
+    <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/dettect graffiti.png" alt="Товар 4">
+  <h3>Наклейка "Kontur"</h3>
+  <p class="price">Цена: 399 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 40x20 см</p>
+      <p>Материал: Виниловая/галографическая пленка</p>
+      <p>Устойчива к воде и ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+      
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/dettect stars.png" alt="Товар 5">
+  <h3>Наклейка "Stars"</h3>
+  <p class="price">Цена: 299 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 40x18 см</p>
+      <p>Материал: Виниловая/галографическая пленка</p>
+      <p>Устойчива к воде и ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+      
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/dettect metal.png" alt="Товар 6">
+  <h3>Наклейка "Metal"</h3>
+  <p class="price">Цена: 999 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 85x52 см</p>
+      <p>Материал: Виниловая/галографическая пленка</p>
+      <p>Устойчива к воде и ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/dettect heart.png" alt="Товар 7">
+  <h3>Наклейка "Heart"</h3>
+  <p class="price">Цена: 799 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 70x50 см</p>
+      <p>Материал: Виниловая/галографическая пленка</p>
+      <p>Устойчива к воде и ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/dettect vodorosli.png" alt="Товар 8">
+  <h3>Наклейка "USA"</h3>
+  <p class="price">Цена: 899 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 80x50 см</p>
+      <p>Материал: Виниловая/галографическая пленка</p>
+      <p>Устойчива к воде и ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+    
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/graphiti.png" alt="Товар 9">
+  <h3>Наклейка "Graphiti"</h3>
+  <p class="price">Цена: 199 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 10x2 см</p>
+      <p>Материал: Виниловая/галографическая пленка</p>
+      <p>Устойчива к воде и ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/spider.png" alt="Товар 10">
+  <h3>Наклейка "Spider"</h3>
+  <p class="price">Цена: 249 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 35x12 см</p>
+      <p>Материал: Виниловая/галографическая пленка</p>
+      <p>Устойчива к воде и ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/squad.png" alt="Товар 11">
+  <h3>Наклейка "Squad"</h3>
+  <p class="price">Цена: 349 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 8x3 см</p>
+      <p>Материал: Виниловая/галографическая пленка</p>
+      <p>Устойчива к воде и ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/www.dettect.png" alt="Товар 12">
+  <h3>Наклейка "WWW"</h3>
+  <p class="price">Цена: 149 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 50x6 см</p>
+      <p>Материал: Виниловая/галографическая пленка</p>
+      <p>Устойчива к воде и ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/tishka.png" alt="Товар 13">
+  <h3>Футболка</h3>
+  <p class="price">Цена: 2499 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размерный ряд: M/L/XL</p>
+      <p>Цвет: черный/белый</p>
+      <p>Материал: 100% хлопок</p>
+      <p>Плотность: 230 гр.</p>
+      <p>Покрой: оверсайз</p>
+      <p>Бонус: наклейка, брелок</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/tolstovka.png" alt="Товар 14">
+  <h3>Толстовка</h3>
+  <p class="price">Цена: 3999 руб.</p>
+  <div class="product-details" style="display: none;">
+    <p>Размерный ряд: M/L/XL</p>
+    <p>Цвет: черный/белый</p>
+    <p>Материал: 70% хлопок, 30% полиэстер</p>
+    <p>Особенности модели: с начесом</p>
+    <p>Покрой: свободный</p>
+    <p>Бонус: наклейка, брелок</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<div class="product-card" onclick="openProductDetails(this)">
+  <img src="img/flag.png" alt="Товар 15">
+  <h3>Флаг</h3>
+  <p class="price">Цена: 1499 руб.</p>
+  <div class="product-details" style="display: none;">
+      <p>Размер: 150x90 см</p>
+      <p>Цвет: черный</p>
+      <p>Материал: полиэфирная ткань</p>
+      <P>Крепеж: 4 отверстия для подвеса</P>
+      <p>Устойчив к ультрафиолету</p>
+  </div>
+  <button class="add-to-cart">Добавить в корзину</button>
+</div>
+  </div>
   </section>
   
   <div id="productModal" class="modal">
@@ -94,6 +231,7 @@
   </div>
   <script src="script.js"></script>
 
+  
   <footer>
     <p>&copy; 2025 dettect. Все права защищены.</p>
   </footer>

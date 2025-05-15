@@ -13,6 +13,11 @@
         <div class="logo">
           <a href="#">dettect</a>
         </div>
+         <button class="hamburger" aria-label="Меню">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
         <ul class="menu">
           <li><a href="index.html">Главная</a></li>
           <li><a href="korzina.html">Авторизация</a></li>
@@ -25,12 +30,14 @@
 
     <!-- Main Content Section -->
     <section class="hero">
-      <div class="hero-content">
+    <div class="hero-content">
         <h1>Добро пожаловать в dettect!</h1>
         <p>Мы предоставляем самые лучшие аксессуары для вашего автомобиля.</p>
-        <a href="onas.html" class="cta-button">Узнать больше</a>
-      </div>
-    </section>
+        <div class="hero-button-wrapper">
+            <a href="onas.html" class="cta-button">Узнать больше</a>
+        </div>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section class="services">
@@ -51,9 +58,11 @@
       </div>
     </section>
 
+    
+
     <section class="catalog">
-      <h1>Наши товары</h1>
-      <div class="catalog-container">
+    <h1>Наши товары</h1>
+    <div class="catalog-container">
         <div class="product-card" onclick="openProductDetails(1)">
           <img src="img/dettect baby.png" alt="Товар 1">
           <h3>Наклейка</h3>
@@ -77,8 +86,9 @@
           <h3>Наклейка</h3>
           <p class="price">Цена: 399 руб.</p>
         </div>
-      </div>
-      <a href="katalog.html" class="cta-button2">Перейти к каталогу</a>
+        <div class="catalog-button-wrapper">
+        <a href="katalog.html" class="cta-button2">Перейти к каталогу</a>
+    </div>
     </section>
 
     <script src="script.js"></script>

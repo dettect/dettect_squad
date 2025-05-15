@@ -3,6 +3,10 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
+  background: 
+        linear-gradient(rgba(168, 168, 168, 0.74), rgba(59, 59, 59, 0.6)), /* Затемнение */
+        url('../img/background.png') no-repeat center center fixed;
+    background-size: cover;
 }
 
 h1, h2, h3 {
@@ -60,6 +64,7 @@ nav .menu li a:hover {
   padding: 50px 20px;
   max-width: 900px;
   margin: 0 auto;
+  margin-top: 35px;
   background: white;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -69,6 +74,8 @@ nav .menu li a:hover {
   font-size: 2.8em;
   margin-bottom: 15px;
   color: #222;
+  border-bottom: 2px solid #6b3aff;
+  display: inline-block;
 }
 
 .about p {
@@ -224,3 +231,128 @@ footer {
   font-size: 18px;
 }
 
+@media (max-width: 768px) {
+  /* Адаптация навигации */
+  nav .menu {
+    flex-direction: column;
+    gap: 10px;
+    display: none; /* Скрываем меню по умолчанию */
+  }
+
+  .menu.active {
+    display: flex; /* Показываем при активации */
+  }
+
+  /* Гамбургер-меню */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  /* Адаптация заголовков */
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+
+  .about ul li {
+    font-size: 14px;
+  }
+}
+
+/* Стили для гамбургер-иконки */
+.hamburger {
+    display: none; /* Скрыто на десктопе */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.hamburger-inner::before {
+    top: -8px;
+}
+
+.hamburger-inner::after {
+    bottom: -8px;
+}
+
+/* Анимация при открытии */
+.hamburger.active .hamburger-inner {
+    background: transparent;
+}
+
+.hamburger.active .hamburger-inner::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; 
+    }
+
+    .menu {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: #333;
+        flex-direction: column;
+        padding: 20px 0;
+        transition: right 0.3s;
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .menu li {
+        margin: 15px 0;
+        text-align: center;
+    }
+}
